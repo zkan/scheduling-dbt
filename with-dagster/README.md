@@ -9,5 +9,5 @@ poetry install
 ```
 
 ```bash
-poetry run dagster dev -f my_dbt_dagster/pipeline.py
+poetry run dagster dev -w workspace.yml
 ```
