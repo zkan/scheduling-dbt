@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "with-dagster"
+version = "0.1.0"
+description = ""
+authors = ["zkan <zkan.cs@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dagster-dbt = "^0.17.13"
+dagster = "^1.1.13"
+dbt-core = "^1.3.2"
+dagit = "^1.1.13"
+dbt-duckdb = "^1.3.4"
+dagster-duckdb = "^0.17.13"
+dagster-duckdb-pandas = "^0.17.13"
+pandas = "^1.5.3"
+plotly = "^5.13.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
