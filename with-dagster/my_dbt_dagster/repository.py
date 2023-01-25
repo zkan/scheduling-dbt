@@ -11,8 +11,8 @@ from my_dbt_dagster.assets import DBT_PROFILES, DBT_PROJECT_PATH
 @repository
 def my_dbt_dagster():
     return with_resources(
-        load_assets_from_package_module(assets),
-        {
+        definitions=load_assets_from_package_module(assets),
+        resource_defs={
             "dbt": dbt_cli_resource.configured(
                 {
                     "project_dir": DBT_PROJECT_PATH,
