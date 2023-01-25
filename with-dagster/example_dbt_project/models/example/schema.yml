@@ -19,3 +19,9 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: my_hello_world
+    description: "A hello world model"
+    columns:
+      - name: greeting
+        description: "Greeting text"

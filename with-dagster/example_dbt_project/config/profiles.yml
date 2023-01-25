@@ -1,0 +1,8 @@
+example_dbt_project:
+  outputs:
+    local:
+      type: duckdb
+      path: example.duckdb
+      schema: example_dbt_project
+ 
+  target: local
