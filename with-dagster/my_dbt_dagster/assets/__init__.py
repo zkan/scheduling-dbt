@@ -27,7 +27,7 @@ dbt_assets = load_assets_from_dbt_project(
 )
 
 
-@asset(ins={"customers": AssetIn(key_prefix=["example_dbt_project"])}, group_name="staging")
+@asset(ins={"customers": AssetIn(key_prefix=["example_dbt_project"])}, key_prefix=["example_output"], group_name="staging")
 def order_count_chart(context, customers: pd.DataFrame) -> None:
     fig = px.histogram(customers, x="number_of_orders")
     fig.update_layout(bargap=0.2)
