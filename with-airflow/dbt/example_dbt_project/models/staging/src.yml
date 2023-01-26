@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: public
+    tables:
+      - name: orders
+      - name: users
