@@ -1,13 +1,17 @@
-# Using dbt with Dagster software-defined assets
+# Scheduling dbt with Dagster Software-Defined Assets
 
 Credit: https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster
 
 ## Getting Started
 
-```bash
-poetry install
-```
+To install Python dependencies:
 
 ```bash
-poetry run dagster dev -w workspace.yml
+make install
+```
+
+To run Dagster:
+
+```bash
+make run
 ```
