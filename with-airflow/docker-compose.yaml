@@ -66,6 +66,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/dbt:/opt/airflow/dbt
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -277,5 +278,19 @@ services:
   #     airflow-init:
   #       condition: service_completed_successfully
 
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: greenery
+    volumes:
+      - db-volume:/var/lib/postgresql/data
+      - ./setup/scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./setup/data:/data
+    ports:
+      - 5432:5432
+
 volumes:
   postgres-db-volume:
+  db-volume:
