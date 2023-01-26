@@ -1,5 +1,9 @@
 # Scheduling dbt with Airflow
 
+## Getting Started
+
+To set up Airflow:
+
 ```bash
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
@@ -9,14 +13,12 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 make up
 ```
 
-### Postgres Connection
+To set up a Postgres Connection, use the information below:
 
-```
-Connection Name: `example_db`
-Connection Type: `Postgres`
-Host: `db`
-Schema: `greenery`
-Login: `postgres`
-Password: `postgres`
-Port: `5432`
-```
+- Connection Name: `example_db`
+- Connection Type: `Postgres`
+- Host: `db`
+- Schema: `greenery`
+- Login: `postgres`
+- Password: `postgres`
+- Port: `5432`
